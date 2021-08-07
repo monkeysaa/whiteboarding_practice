@@ -1,0 +1,42 @@
+# Write a function that takes in an array and returns a reversed array.
+# don't use built-in reverse function. 
+
+def reverse_list(my_list):
+    return my_list[::-1]
+
+def reverse_in_place(my_list):
+    """Reverse a list in place
+
+    >>>reverse_in_place([1, 2, 3])
+    [3, 2, 1]
+
+    >>>reverse_in_place([])
+    []
+
+    >>>reverse_in_place(['string', 3, True, None])
+    [None, True, 3, 'string']
+    """
+
+    # Create pointer to outer end of array
+    pointer2 = -1
+
+    # Set up var to hold extra value
+    # Stopping at halfway through list, not including last val if odd
+
+    For i in range(len(my_list) // 2): 
+        x = my_list[i] 
+        my_list[i] = my_list[pointer2] 
+        my_list[pointer2] = x 
+        pointer2 -= 1
+    
+    return my_list
+    
+
+
+### Advice
+
+# If problem says Don't return a new list -- Focus on performance
+# So we want to use a minimum of memory
+
+# Watch for: sometimes I go silent for a while. Give them a heads up.
+# It may look like I'm floundering if I just fall silent. 
